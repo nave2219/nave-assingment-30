@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT GRADE CALCULATOR</title><!--style.css-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: cursive;
+
+}
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+.container{
+    background:#2a9fa5 ;
+    width: 700px;
+    height: 350px;
+    box-shadow: 0px 10px 10px 0px #000;
+    border-radius: 10px ;
+
+}
+.left-box{
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    background-color:#00d3ba;
+    border-radius: 10px 0px 0px 10px;
+
+}
+
+.left-box h1{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgba(165, 43, 226, 0.966);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.p-g-t{
+    text-align: center;
+    display: grid;
+    place-content:center;
+    min-height: 30vh;
+}
+.p-g-t h2{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 20px 0px;
+}
+.content .right-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 62vw;
+    min-height: 50vh;
+}
+.right-box input{
+    margin: 10px 0px;
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    overflow: none;
+    border: 0;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+.right-box button{
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+    padding: 0px 10px;
+    background-color: #3f00d383;
+    color: black;
+    border: 0;
+    outline: none;
+    font-size: medium;
+    font-weight: 900;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.result{
+    position: absolute;
+    bottom: 194px;
+    width: 230px;
+    height: 40px;
+    background-color:rgba(0, 73, 128, 0.684);
+    border-radius: 0px 0px 0px 10px;
+}
+.result h2{
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.3rem;
+    color: orangered;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="left-box">
+                <h1>result</h1>
+                    <div class="p-g-t">
+                        <h2>percentage - <span class="per"></span></h2>
+                        <h2>grade - <span class="gra"></span></h2>
+                        <h2>total - <span class="to "></span></h2>
+            </div>
+        </div>
+        <div class="content">
+            <div class="right-box">
+         <input type="number" id="eng" placeholder="english"/> 
+         <input type="number" id="mt" placeholder="maths"/> 
+         <input type="number"  id="ph" placeholder="physcis"/> 
+         <input type="number" id="che" placeholder="chemistry"/> 
+         <input type="number" id="cs" placeholder="computer system "/> 
+         <button type="button" onclick="show_result()">show result</button>   
+        </div>
+        </div>
+        <div class="result">
+        <h2></h2>
+        </div>
+    </div>
+
+    
+    <!--one.js-->
+    <script>
+    function show_result(){
+        let c = document.querySelector("#eng").value;
+        let mt = document.querySelector("#mt").value;
+        let ph = document.querySelector("#ph").value;
+        let ja=document.querySelector("#che").value;
+        let csa =document.querySelector("#cs").value;
+    
+        let to=parseFloat(eng) + parseFloat(mt) + parseFloat(ph) + parseFloat(che) + parseFloat(cs);
+        let per=(to*100)/500;
+    
+        if(per>=90){
+          document.querySelector(".gra").innerHTML="a+";
+        }
+        else if(per>=80){
+          document.querySelector(".gra").innerHTML="a";
+        }
+        else if(per>=70){
+          document.querySelector(".gra").innerHTML="b+";
+        }
+        else if(per>=60){
+          document.querySelector(".gra").innerHTML="b";
+        }
+        else if(per>=50){
+          document.querySelector(".gra").innerHTML="c+";
+        }
+        else if(per>=40){
+          document.querySelector(".gra").innerHTML="c";
+        }
+        else if(per>=35){
+          document.querySelector(".gra").innerHTML="d+";
+        }
+        else if(per>=30){
+          document.querySelector(".gra").innerHTML="d";
+        }
+        else {
+          document.querySelector(".gra").innerHTML="you are fail";
+        }
+    
+        document.querySelector(".to").innerHTML=to;
+        document.querySelector(".per").innerHTML=per;
+    
+        if(per>30){
+          document.querySelector(".result h2").innerHTML="you are pass";
+        }
+        
+    } 
+    </script>
+
+
+</html>

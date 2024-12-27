@@ -1,243 +1,324 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>LOGIN FORM</title>
     <style>
         body{
-            margin:0;
-            height: 100vh;
+            height:100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background:#318cfe;
-             font-family: sans-serif;
             background: linear-gradient(to right,#12c2e9,#c471ed,#f64f59);
-        }
-        .container{
-            position: relative;
-
-        }
-        .drop{
-            height: 200px;
-            width: 200px;
-            background: #54abfb;
-            border-radius: 51% 49% 48% 52% / 62% 44% 56% 38% ;
-            border:2px solid #3d93ff ;
-            opacity: .8;
-            position: absolute;
-        }
-        .drop::before{
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: #318cfe;
-            box-shadow: -20px 30px 16px #1b6cfb,
-                          40px 60px 32px #1b6cfb,
-                          inset 6px 6px 10px #1b6cfb,
-                          inset 2px 6px 10px #1a74e5,
-                          inset 20px -20px 22px #fff,
-                          inset 40px -40px 44px #a8ceff;
-            border-radius:51% 49% 48% 52% / 62% 44% 56% 38% ;
-        }
-        .drop::after{
-            content:'';
-            position:absolute;
-            height: 40px;
-            width: 40px;
-            background-color: #e6fdfb;
-            border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
-            left: 130px;
-            top: 40px;
-            box-shadow: 16px 40px 0 -10px #fff;
-            opacity: .8;
-        }
-        .drop1{
-            left: -300px;
-
-        }
-        .drop2{
-            right:-300px ;
-            z-index: -1;
-            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
-        }
-        .drop2::before{
-            border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
-        
-        }
-        form{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            padding: 40px 20px ;
-            box-shadow: -5px 5px 16px #1b6cfb,
-                          -30px 60px 22px #1b6cfb,
-                           px 6px 10px #1b6cfb,
-                           2px 6px 10px #1a74e5;
-            background: rgba(255,255,255,0.28);
-            border-radius: 16px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        h1{
-            margin-top: 0;
-            text-align: center;
-            color: black;
-            text-shadow: 2px 2px 1px rgba (0,0,0,0.25);
-        }
-        input{
-            margin-top: 0;
-            height: 30px;
-            width: 300px;
-            margin-bottom: 40px;
-            font-size: 17px;
-            border: none;
-            outline: none;
-            background: transparent;
-            border-bottom: 1px solid #fff;
-            color: #fff;
-        }
-        input::placeholder{
-            color:#fff;
-        }
-        button{
-            height: 30px;
-            border: 1px solid rgba(255,255,255,0.8);
-            background:transparent;
-            color: #fff;
-            box-shadow: 4px 4px 3px rgba(0,0,0,0,0.25);
-            border-radius: 5px;
-            font-size: 17px;
-            cursor: pointer;
-        }
-        .bg-bubbles{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        li{
-            position: absolute;
-            list-style: none;
-            display: block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.15);
-            bottom: -160px;
-            animation: square 25s infinite;
-            transition-timing-function: linear;
-        }
-        @keyframes square{
-            0%{
-                transform:translateY(0) ;
-
-            }
-            100%{
-                transform: translateY(-700px) rotate(600deg);
-            }
-        }
-        li:nth-child(1){
-            left:10%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 17s;
-
-        }
-        li:nth-child(2){
-            left:20%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 17s;
-        
-        }
-        li:nth-child(3){
-            left: 25%; 
-             width: 80px;
-            height: 80px;
-            animation-delay:4s;
-            animation-duration: 17s;
-
-        }
-        li:nth-child(4){
-            left:70%; 
-             width: 80px;
-            height: 80px;
-            animation-delay: 5s;
-            animation-duration:50s;
-
-        }
-        li:nth-child(5){
-            left:80%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 4s;
-            animation-duration: 70s;
-        }
-        li:nth-child(6){
-            left:10%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 70s;
+            margin: 0;
+            background-color: #318cfe;
+            font-family: sans-serif;
         }
 
-        li:nth-child(7){
-            left:60%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 54s;
-        }
-        li:nth-child(8){
-            left:50%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 17s;
-        }
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-        li:nth-child(9){
-            left:80%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 80s;
-        } 
-        li:nth-child(10){
-            left:50%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 2s;
-            animation-duration: 70s;
-        }
-        
+}
+.container{
+    position: relative;
+}
+.drop{
+    height: 200px;
+    width: 200px;
+    background: #54abfb;
+    border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+    border: 2px solid #3d93ff;
+    opacity: .8;
+    position: absolute;
+}
+.drop:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #318cfe;
+    box-shadow: -20px 30px 16px #1b6cfb,
+                  40px 60px 32px #1b6cfb,
+                  inset 6px 6px 10px #1b6cfb,
+                  inset 2px 6px 10px #1a74e5,
+                  inset 20px -20px 22px #fff,
+                inset 40px -40px 44px #a8ceff;
+    border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+
+}
+.drop:after{
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: #e6fdfb;
+    border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+    left: 130px;
+    top: 40px;
+    box-shadow: 16px 40px 0 -10px #fff;
+    opacity: .8;
+
+}
+.drop1{
+    left: -300px;
+
+}
+.drop2{
+    right: -300px;
+    z-index: -1;
+    border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+}
+.drop:before{
+    border-radius:46% 50% 39% 54% / 56% 57% 50% 50% ;
+
+}  
+
+.container form{
+width: 90%;
+max-width: 500px;
+background:black;
+padding: 50px 30px 20px;
+border-radius: 16px;
+box-shadow: -5px 5px 3px #1b6cfb,
+             -30px 50px 22px #1b6cfb,
+             20px 30px 16px #1b6cfb,
+             40px 60px 32px #1a74e5;
+
+
+position: relative;
+backdrop-filter: blur(5px);
+border: 1px solid black;
+
+
+}
+.fa-paper-plane{
+position: absolute;
+top: 0;
+left: 50%;
+transform: translate(-50%,-50%);
+background: blue;
+font-size: 26px;
+padding: 20px;
+border-radius: 50%;
+box-shadow: 0 0 10px black;
+
+}
+.input-group{
+width: 100%;
+display: flex;
+align-items: center;
+margin: 10px 0;
+position: relative;
+
+
+
+}
+.input-group label{
+flex-basis: 28%;
+}
+.input-group input, .input-group textarea{
+flex-basis: 68%;
+background: transparent;
+border: 0;
+outline: 0;
+padding: 10px 0;
+border-bottom: 1px solid #999;
+color: white;
+font-size: 16px;
+}
+::placeholder{
+font-size: 14px;
+}
+form button{
+background: green;
+color: white;
+border-radius: 4px;
+border: 1px solid rgba(204, 77, 18, 0.7);
+padding: 10px 40px;
+outline: 0;
+cursor: pointer;
+display: block;
+margin: 30px auto 10px;
+
+
+}
+.input-group span{
+position: absolute;
+bottom: 12px;
+right: 17px;
+font-size: 14px;
+color: blue;
+
+}
+#login-error{
+    color: red;
+}
+.bg-bubbles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+}
+li{
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.15);
+    bottom: -160px;
+    animation: square 25s infinite;
+    transition-timing-function: linear;
+}
+@keyframes square{
+    0%{
+        transform: translateY(0);
+
+    }
+    100%{
+        transform: translateY(-700px) rotate(600deg);
+    }
+}
+li:nth-child(1){
+    left: 10%;
+}
+li:nth-child(2){
+    left: 20%;
+    width:80px;
+    height: 80px;
+    animation-delay: 2s;
+    animation-duration: 22s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(3){
+    left: 30%;
+    width:80px;
+    height: 80px;
+    animation-delay: 4s;
+    animation-duration: 55s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(4){
+    left: 40%;
+    width:80px;
+    height: 80px;
+    animation-delay: 2s;
+    animation-duration: 44s;
+    background: rgba(255,255,255,0.15);
+
+}
+li:nth-child(5){
+    left: 50%;
+    width:80px;
+    height: 80px;
+    animation-delay: 3s;
+    animation-duration: 33s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(6){
+    left: 600%;
+    width:80px;
+    height: 80px;
+    animation-delay: 4s;
+    animation-duration: 55s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(7){
+    left: 70%;
+    width:80px;
+    height: 80px;
+    animation-delay: 4s;
+    animation-duration: 22s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(8){
+    left: 80%;
+    width:80px;
+    height: 80px;
+    animation-delay: 5s;
+    animation-duration: 55s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(9){
+    left: 90%;
+    width:80px;
+    height: 80px;
+    animation-delay: 6s;
+    animation-duration: 2s;
+    background: rgba(255,255,255,0.15);
+}
+
+li:nth-child(10){
+    left: 100%;
+    width:80px;
+    height: 80px;
+    animation-delay: 9s;
+    animation-duration: 100s;
+    background: rgba(255,255,255,0.15);
+}
+
+
+
+
+
+
 
 
     </style>
-    
 </head>
 <body>
     <div class="container">
+
         <div class="drop drop1"></div>
         <div class="drop drop2"></div>
-        <form name="my form" method="post" onsubmit="validateform()">
-            <h1>Login Form</h1>
-            <input type="text" name="name" placeholder="Username">
-            <input type="text"  name="password" placeholder="password">
-            <input type="text" name="eamil id" placeholder="enter your email id">
-            <input type="text" name="address" placeholder="address">
-            <input type="text" name="contact number" placeholder="contact number">
-            <button>Login </button>
-        </form>
 
     </div>
-    <ul class="bg-bublles">
+<form>
+<i class="fas fa-paper-plane"></i>
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name" id="contact-name" onkeyup="validateName()">
+<span id="name-error"></span>
+</div>
+<div class="input-group">
+    <label>Password</label>
+    <input type="password" placeholder="Enter your Password" id="contact-password" onkeyup="validatePassword()">
+    <span id="password-error"></span>
+</div>
+<div class="input-group">
+    <label>Phone No.</label>
+    <input type="tel" placeholder="123 456 7890" id="contact-phone" onkeyup="validatePhone()">
+    <span id="phone-error"></span>
+</div>
+<div class="input-group">
+    <label>Email Id</label>
+    <input type="email" placeholder="Enter Email " id="contact-email" onkeyup="validateEmail()">
+    <span id="email-error"></span>
+</div>
+<div class="input-group">
+    <label>Your Message</label>
+    <textarea rows="5" placeholder="Enter your message" id="contact-message" onkeyup="validateMessage()"></textarea>
+    <span id="message-error"></span>
+</div>
+
+<button onclick="return validateForm()">Login</button>
+<span id="login-error"></span>
+
+
+</form>
+
+    </div>
+    <ul class="bg-bubbles">
         <li></li>
         <li></li>
         <li></li>
@@ -250,38 +331,114 @@
         <li></li>
 
     </ul>
+<script>
+  var nameError = document.getElementById('name-error');
+  var passwordError = document.getElementById('password-error');
+  var phoneError = document.getElementById('phone-error');
+  var emailError = document.getElementById('email-error');
+  var messageError = document.getElementById('message-error');
+  var loginError = document.getElementById('login-error');
 
-    <script>
-        function valildateform(){
-            var name=document.myform.name.value;
-            var name=document.myform.password.value;
-            var name = document.myform. enteryouremailid.value;
-            var name = document.myform.address.value;
-            var name = document.myform.contactnumber.value;
-            
+function validateName(){
+    var name = document.getElementById('contact-name').value;
 
-            if(name == nu11 || name == ''){
-                altert("name can't be blank")
-            }
-            else if (password.length<6){
-                alert("password must be at least 6 characters");
-            }
-        else if ("enteryouremailid"){
-            altert("enter your correct emailid")
+    if(name.length == 0){
+        nameError.innerHTML = 'Name is required';
+        return false;
+    }
+    if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){
+        nameError.innerHTML = 'write full name';
+        return false;
+    }
+    nameError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
+}
+function validatePassword(){
+    var password = document.getElementById('contact-password').value;
 
-        }
-        else if ("address"){
-            alert("give valid address")
-        }
-        else if ("contact number"){
-            alert("give valid number")
-        }
-        }
+    if(password.length == 0){
+        passwordError.innerHTML = 'password is required';
+        return false;
+    }
+    if(password.length !== 10){
+        passwordError.innerHTML = 'password no should be 10 digits required';
+        return false;
+    }
+    if(!password.match(/^[0-9]{10}$/)){
+        passwordError.innerHTML = 'password no is required';
+        return false;
+    }
+    passwordError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
 
+}
+function validatePhone(){
+    var phone = document.getElementById('contact-phone').value;
 
+    if(phone.length == 0){
+        phoneError.innerHTML = 'Phone no is required';
+        return false;
+    }
+    if(phone.length !== 10){
+        phoneError.innerHTML = 'Phone no should be 10 digits';
+        return false;
+    }
+    if(!phone.match(/^[0-9]{10}$/)){
+        phoneError.innerHTML = 'Only digits please.';
+        return false;
+    }
+    phoneError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
 
-    </script>
-
+}
+function validateEmail(){
     
+    var email = document.getElementById('contact-email').value;
+
+    if(email.length == 0){
+        emailError.innerHTML = 'Email is required'
+        return false;
+    }
+    if(!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        emailError.innerHTML = 'Email Invalid'
+        return false;
+    }
+
+    emailError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
+}
+function validateMessage(){
+    
+    var message = document.getElementById('contact-message').value;
+    var required = 30;
+    var left = required - message.length;
+
+    if(left>0){
+       messageError.innerHTML = left + 'more characters required';
+       return false;
+    }
+
+    messageError.innerHTML = '<i class="fas fa-check-circle"></i>';
+    return true;
+}
+function validateForm(){
+    if(!validateName() || !validatePassword() || !validatePhone()  || !validateEmail() || !validateMessage()){
+        loginError.style.display = 'block';
+        loginError.innerHTML = 'Please fix error to submit';
+        setTimeout(function(){loginError.style.display = 'none';}, 3000);
+        return false;
+
+    }
+
+
+
+}
+
+
+</script>
+
+
+
+
 </body>
 </html>
